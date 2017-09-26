@@ -1,3 +1,4 @@
 module.exports = function multiply(first, second) {
-  return '50';
+  let notation =10;
+  return (parseInt(first,notation)*parseInt(second,notation)).toString;
 }
