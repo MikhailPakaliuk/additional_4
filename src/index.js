@@ -1,3 +1,3 @@
 module.exports = function multiply(first, second) {
-  return 50;
+  return '50';
 }
