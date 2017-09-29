@@ -27,7 +27,11 @@ module.exports = function multiply(first, second) {
     sum += olderFigure;
     olderFigure = Math.floor(sum / 10);
     result = sum%10 + result;
+
     sum=0;
+  }
+  if(olderFigure>0){
+  result = olderFigure + result;
   }
   return result;
 }
