@@ -18,7 +18,7 @@ module.exports = function multiply(first, second) {
   let sum = 0;
   let olderFigure = 0;
   
-  for (let i = 0; i < lengthResult-1; i++) {
+  for (let i = 0; i < lengthResult; i++) {
     for (let j = 0; j <= i; j++) {
       if(((i - j)<lengthFirst)&(j<lengthSecond)){
         sum += arrayFirst[j] * arraySecond[i - j];
