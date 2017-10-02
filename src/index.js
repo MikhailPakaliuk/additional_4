@@ -7,6 +7,14 @@ module.exports = function multiply(first, second) {
     return result;
   }
   
+  function crutch(value) {
+    if (typeof value === 'number' & isFinite(value)) {
+      return value;
+    } else {
+      return value = 0;
+    }
+  }
+  
   let arrayFirst = toInt(first.split('').reverse());
   let arraySecond = toInt(second.split('').reverse());
   let lengthFirst = first.length;
@@ -20,8 +28,10 @@ module.exports = function multiply(first, second) {
   
   for (let i = 0; i < lengthResult; i++) {
     for (let j = 0; j <= i; j++) {
-      if(((i - j)<lengthFirst)&(j<lengthSecond)){
-        sum += arrayFirst[j] * arraySecond[i - j];
+      if (((i - j) < second.length) & (j < first.length)) {
+        sum += crutch(arrayFirst[j] * arraySecond[i - j]);
+      } else {
+        sum += 0;
       }
     }
     sum += olderFigure;
