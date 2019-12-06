@@ -6,7 +6,6 @@ module.exports = function multiply(first, second) {
     }
     return result;
   }
-  
   function crutch(value) {
     if (typeof value === 'number' & isFinite(value)) {
       return value;
@@ -14,17 +13,11 @@ module.exports = function multiply(first, second) {
       return value = 0;
     }
   }
-  
   let arrayFirst = toInt(first.split('').reverse());
   let arraySecond = toInt(second.split('').reverse());
-  let lengthFirst = first.length;
-  let lengthSecond =second.length;
-  
+  let lengthFirst = first.length, lengthSecond =second.length;
   let lengthResult = lengthFirst + lengthSecond - 1;
-
-  let result = '';
-  let sum = 0;
-  let olderFigure = 0;
+  let result = '', sum = 0, olderFigure = 0;
   
   for (let i = 0; i < lengthResult; i++) {
     for (let j = 0; j <= i; j++) {
@@ -37,15 +30,10 @@ module.exports = function multiply(first, second) {
     sum += olderFigure;
     olderFigure = Math.floor(sum / 10);
     result = sum%10 + result;
-
     sum=0;
   }
   if(olderFigure>0){
-  result = olderFigure + result;
+    result = olderFigure + result;
   }
   return result;
 }
-  /*
-  let notation =10;
-  return (parseInt(first,notation)*parseInt(second,notation)).toString();
-*/
